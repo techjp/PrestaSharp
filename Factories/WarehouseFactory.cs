@@ -1,4 +1,4 @@
-﻿using RestSharp;
+using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,17 +39,6 @@ namespace Bukimedia.PrestaSharp.Factories
             this.Execute<Entities.warehouse>(request);
         }
 
-        public void Delete(long WarehouseId)
-        {
-            RestRequest request = this.RequestForDelete("warehouses", WarehouseId);
-            this.Execute<Entities.warehouse>(request);
-        }
-
-        public void Delete(Entities.warehouse Warehouse)
-        {
-            this.Delete((long)Warehouse.id);
-        }
-
         public List<long> GetIds()
         {
             RestRequest request = this.RequestForGet("warehouses", null, "prestashop");
@@ -65,28 +54,14 @@ namespace Bukimedia.PrestaSharp.Factories
         /// <returns></returns>
         public List<Entities.warehouse> GetByFilter(Dictionary<string, string> Filter, string Sort, string Limit)
         {
-            RestRequest request = this.RequestForFilter("warehouses", "full", Filter, Sort, Limit, "warehouses");
+            RestSharp.RestRequest request = this.RequestForFilter("warehouses", "full", Filter, Sort, Limit, "warehouses");
             return this.ExecuteForFilter<List<Entities.warehouse>>(request);
         }
 
         /// <summary>
-        /// More information about filtering: http://doc.prestashop.com/display/PS14/Chapter+8+-+Advanced+Use
+        /// Get all warehouse.
         /// </summary>
-        /// <param name="Filter">Example: key:name value:Apple</param>
-        /// <param name="Sort">Field_ASC or Field_DESC. Example: name_ASC or name_DESC</param>
-        /// <param name="Limit">Example: 5 limit to 5. 9,5 Only include the first 5 elements starting from the 10th element.</param>
-        /// <returns></returns>
-        public List<long> GetIdsByFilter(Dictionary<string, string> Filter, string Sort, string Limit)
-        {
-            RestRequest request = this.RequestForFilter("warehouses", "[id]", Filter, Sort, Limit, "warehouses");
-            List<PrestaSharp.Entities.FilterEntities.warehouse> aux = this.Execute<List<PrestaSharp.Entities.FilterEntities.warehouse>>(request);
-            return (List<long>)(from t in aux select t.id).ToList<long>();
-        }
-
-        /// <summary>
-        /// Get all warehouses.
-        /// </summary>
-        /// <returns>A list of warehouses</returns>
+        /// <returns>A list of warehouse</returns>
         public List<Entities.warehouse> GetAll()
         {
             return this.GetByFilter(null, null, null);
