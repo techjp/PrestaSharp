@@ -49,9 +49,6 @@
   <ItemGroup>
     <Compile Include="Deserializers\PrestaSharpDeserializer.cs" />
     <Compile Include="Deserializers\PrestaSharpTextErrorDeserializer.cs" />
-    <Compile Include="Entities\AuxEntities\carrier.cs" />
-    <Compile Include="Entities\AuxEntities\stock.cs" />
-    <Compile Include="Entities\AuxEntities\shop.cs" />
     <Compile Include="Entities\AuxEntities\AssociationsWarehouse.cs" />
     <Compile Include="Entities\FilterEntities\stock.cs" />
     <Compile Include="Entities\FilterEntities\warehouse.cs" />
@@ -62,7 +59,6 @@
     <Compile Include="Entities\AuxEntities\AssociationsCombination.cs" />
     <Compile Include="Entities\AuxEntities\address.cs" />
     <Compile Include="Entities\AuxEntities\AssociationsCustomer.cs" />
-    <Compile Include="Entities\AuxEntities\AssociationsWarehouse.cs" />
     <Compile Include="Entities\AuxEntities\carrier.cs" />
     <Compile Include="Entities\AuxEntities\category.cs" />
     <Compile Include="Entities\AuxEntities\combinations.cs" />
@@ -110,7 +106,6 @@
     <Compile Include="Entities\FilterEntities\zone.cs" />
     <Compile Include="Entities\tax.cs" />
     <Compile Include="Entities\tax_rule.cs" />
-    <Compile Include="Entities\warehouse.cs" />
     <Compile Include="Entities\zone.cs" />
     <Compile Include="Entities\FilterEntities\guest.cs" />
     <Compile Include="Entities\guest.cs" />
@@ -189,7 +184,6 @@
     <Compile Include="Factories\StateFactory.cs" />
     <Compile Include="Factories\TaxFactory.cs" />
     <Compile Include="Factories\TaxRuleFactory.cs" />
-    <Compile Include="Factories\WarehouseFactory.cs" />
     <Compile Include="Factories\ZoneFactory.cs" />
     <Compile Include="Factories\GuestFactory.cs" />
     <Compile Include="Factories\TaxRuleGroupFactory.cs" />
